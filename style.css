@@ -47,7 +47,8 @@
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, rgba(212, 22, 95, 0.7) 0%, rgba(139, 10, 62, 0.7) 100%), 
+                url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=700&fit=crop') center/cover;
     color: white;
     padding: 8rem 2rem;
     text-align: center;
