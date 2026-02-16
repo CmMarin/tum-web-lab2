@@ -1,24 +1,25 @@
-# Lab 2 - Landing page
+# Vaidoso Kizomba School Landing Page
 
-Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)
+A premium landing page for "Vaidoso Kizomba School," an Angolan dance academy. The design features a modern dark aesthetic with neon accents, glassmorphism effects, and fluid typography.
 
-> For a maximal grade, the website should be for a real client (your/friends/relatives business), otherwise -1-2 points
+## Live Demo
+[View Live Site](https://cmmarin.github.io/tum-web-lab2/)
 
-## Customer requirements
+## Topic & Features
+This project is a high-energy, single-page website built with semantic HTML5 and advanced CSS3. 
 
-- Some form of navigation to sections (links, buttons)
-- Call to action
-- At least 4 sections ([see examples](https://webflow.com/blog/high-converting-landing-page))
-- Pleasant to the eyes
+**Key Features:**
+*   **Pure CSS Interactivity:** Mobile navigation and interactions handled without JavaScript.
+*   **Responsive Design:** Distinct desktop (grid-based) and mobile (horizontal snap-scroll) layouts.
+*   **Visual Effects:** Ken Burns hero animation, glassmorphism cards, and "ghost" typography background elements.
+*   **Theming:** Custom CSS variables for a consistent Dark/Neon color scheme.
 
-## Dev requirements
+## Screenshots
 
-- Use vanilla CSS and HTML (no frameworks)
-- Have a decent git history (no one commit)
-- The page should be deployed on a free hosting service (example: GitHub Pages, Vercel, Netlify)
-- Project repo should have a README with a short description of the landing page topic, screenshots, and a link to the live demo
+### Desktop View
+![Desktop Preview](desktop.png)
+*Full-screen hero section with immersive video/image background and grid layouts.*
 
-## Other requirements:
-
-- For potential maximal mark, a WIP version should be submitted during the class
-- Use index.html, reset.css
+### Mobile View
+![Mobile Preview](mobile.png)
+*Optimized mobile experience with horizontal swipe cards and bottom-sheet navigation.*
