@@ -85,5 +85,185 @@
             </div>
         </div>
     </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="classes">
+        <div class="classes-container">
+            <h2>Our Classes</h2>
+            
+            <div class="classes-grid">
+                <div class="class-card" onclick="openModal('beginners')">
+                    <div class="class-badge">First Class Free</div>
+                    <h3>Beginners</h3>
+                    <div class="difficulty">
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p class="class-time">Monday & Wednesday • 7:00 PM</p>
+                    <p class="class-description">New to kizomba? Learn the fundamentals of connection, basic steps, and rhythm. Perfect for dancers of any background.</p>
+                    <div class="highlights">
+                        <span>Connection</span>
+                        <span>Basic Steps</span>
+                        <span>Rhythm</span>
+                    </div>
+                    <p class="class-price">€45/month</p>
+                    <p class="click-info">Click for more details</p>
+                </div>
+
+                <div class="class-card" onclick="openModal('intermediate')">
+                    <h3>Intermediate</h3>
+                    <div class="difficulty">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p class="class-time">Tuesday & Thursday • 8:00 PM</p>
+                    <p class="class-description">Build on your foundations with more complex movements, styling, and partnering techniques. Grow your musicality.</p>
+                    <div class="highlights">
+                        <span>Styling</span>
+                        <span>Partnering</span>
+                        <span>Musicality</span>
+                    </div>
+                    <p class="class-price">€55/month</p>
+                    <p class="click-info">Click for more details</p>
+                </div>
+
+                <div class="class-card" onclick="openModal('advanced')">
+                    <h3>Advanced</h3>
+                    <div class="difficulty">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="class-time">Friday • 8:30 PM</p>
+                    <p class="class-description">Master intricate techniques, advanced styling, and leading/following. For experienced dancers seeking to refine their craft.</p>
+                    <div class="highlights">
+                        <span>Advanced Tech</span>
+                        <span>Leading</span>
+                        <span>Performance</span>
+                    </div>
+                    <p class="class-price">€65/month</p>
+                    <p class="click-info">Click for more details</p>
+                </div>
+
+                <div class="class-card" onclick="openModal('social')">
+                    <h3>Social Nights</h3>
+                    <div class="difficulty">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p class="class-time">Saturday • 9:00 PM</p>
+                    <p class="class-description">Practice what you've learned in a relaxed, social atmosphere. Dance, connect, and enjoy the community.</p>
+                    <div class="highlights">
+                        <span>Community</span>
+                        <span>Practice</span>
+                        <span>Social</span>
+                    </div>
+                    <p class="class-price">€12/night</p>
+                    <p class="click-info">Click for more details</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="beginners-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('beginners')">&times;</span>
+            <h2>Beginners Class</h2>
+            <p><strong>Schedule:</strong> Monday & Wednesday, 7:00 PM</p>
+            <p><strong>Price:</strong> €45/month (First class free!)</p>
+            <h3>What You'll Learn:</h3>
+            <ul>
+                <li>The importance of connection and partnership</li>
+                <li>Basic steps and fundamental movements</li>
+                <li>Understanding kizomba rhythm and timing</li>
+                <li>How to move with confidence and ease</li>
+            </ul>
+            <p><strong>Who Should Join:</strong> Complete beginners, anyone new to partner dancing, or those wanting to learn authentic kizomba.</p>
+            <p><strong>Class Size:</strong> Max 15 students for personalized attention</p>
+            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="modal-cta" target="_blank">Enroll Now</a>
+        </div>
+    </div>
+
+    <div id="intermediate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('intermediate')">&times;</span>
+            <h2>Intermediate Class</h2>
+            <p><strong>Schedule:</strong> Tuesday & Thursday, 8:00 PM</p>
+            <p><strong>Price:</strong> €55/month</p>
+            <h3>What You'll Learn:</h3>
+            <ul>
+                <li>Advanced connection and lead/follow techniques</li>
+                <li>Styling and personal expression</li>
+                <li>Complex footwork combinations</li>
+                <li>Deeper musicality and interpretation</li>
+            </ul>
+            <p><strong>Who Should Join:</strong> Dancers with basic kizomba knowledge wanting to improve their technique.</p>
+            <p><strong>Class Size:</strong> Max 12 students</p>
+            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="modal-cta" target="_blank">Enroll Now</a>
+        </div>
+    </div>
+
+    <div id="advanced-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('advanced')">&times;</span>
+            <h2>Advanced Class</h2>
+            <p><strong>Schedule:</strong> Friday, 8:30 PM</p>
+            <p><strong>Price:</strong> €65/month</p>
+            <h3>What You'll Learn:</h3>
+            <ul>
+                <li>Mastery of complex techniques and choreography</li>
+                <li>Advanced leading and following</li>
+                <li>Performance skills and stage presence</li>
+                <li>Personal styling and artistic expression</li>
+            </ul>
+            <p><strong>Who Should Join:</strong> Experienced dancers seeking to refine their craft and reach new heights.</p>
+            <p><strong>Class Size:</strong> Max 10 students</p>
+            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="modal-cta" target="_blank">Enroll Now</a>
+        </div>
+    </div>
+
+    <div id="social-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('social')">&times;</span>
+            <h2>Social Dance Nights</h2>
+            <p><strong>Schedule:</strong> Saturday, 9:00 PM</p>
+            <p><strong>Price:</strong> €12 per night</p>
+            <h3>What to Expect:</h3>
+            <ul>
+                <li>Relaxed, fun atmosphere to practice what you've learned</li>
+                <li>Great music and amazing dancers</li>
+                <li>Perfect for meeting other kizomba enthusiasts</li>
+                <li>No pressure, just pure dance enjoyment</li>
+            </ul>
+            <p><strong>Who Should Join:</strong> All levels welcome! From beginners to advanced dancers.</p>
+            <p><strong>What to Bring:</strong> Comfortable dance shoes and a smile!</p>
+            <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="modal-cta" target="_blank">Join Us</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(classType) {
+            document.getElementById(classType + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(classType) {
+            document.getElementById(classType + '-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+        </div>
+    </section>
 </body>
 </html>
