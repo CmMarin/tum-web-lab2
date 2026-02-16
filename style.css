@@ -880,91 +880,282 @@ body::before {
     50% { transform: translateY(-15px); }
 }
 
-/* Mobile FAB Styles */
-.mobile-fab {
-    display: none; /* Hidden on desktop by default */
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    width: 55px;
-    height: 55px;
-    background: var(--gradient-main);
-    border-radius: 50%;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(255, 45, 85, 0.4);
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-    animation: pulse-glow 3s infinite;
+/* Mobile Navigation - Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1003;
+    width: 30px;
 }
 
-/* Responsive Overrides */
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+#mobile-menu-check {
+    display: none;
+}
+
+/* Overlay when menu is open */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
 @media (max-width: 768px) {
-    /* Show Mobile Elements */
-    .mobile-fab {
+    /* Show Hamburger */
+    .menu-toggle {
         display: flex;
     }
+    
+    /* Navbar tweaks */
+    .logo {
+        font-size: 1rem;
+        z-index: 1002;
+        position: relative;
+    }
 
-    /* Keep the mascot visible but smaller on mobile? No, hide it to reduce clutter as per common practice, or position it top right? Let's hide desktop mascot and show a smaller simplified one or just stick to the FAB. */
-    .mascot-container {
-        display: none; 
+    .navbar {
+        width: 92%;
+        padding: 0.8rem 1.2rem;
+        top: 1rem;
+    }
+
+    /* Fullscreen Mobile Menu */
+    .nav-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(18, 18, 18, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        z-index: 1001; /* Behind hamburger, above content */
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    #mobile-menu-check:checked ~ .navbar .nav-menu {
+        transform: translateY(0);
+    }
+    
+    /* Hamburger Animation */
+    #mobile-menu-check:checked ~ .navbar .menu-toggle .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--primary);
+    }
+    
+    #mobile-menu-check:checked ~ .navbar .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #mobile-menu-check:checked ~ .navbar .menu-toggle .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--primary);
+    }
+
+    .nav-link {
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+
+    /* Mobile FAB */
+    .mobile-fab {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        bottom: 20px;
+        left: 20px;
     }
 
     /* Adjust Global Sizing */
     h2 {
-        font-size: 2.2rem;
-        margin-bottom: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        width: 100%; /* Fix centering issue */
     }
     
     section {
-        padding: 4rem 0;
+        padding: 4rem 1rem;
+        overflow: hidden; /* Prevent horizontal scroll from ghosts */
     }
-    
+
     /* Adjust Ghost Typography */
     .bg-text {
-        font-size: 15vw !important; /* Force smaller size */
-        opacity: 0.05 !important;
+        font-size: 12vw !important; 
+        opacity: 0.03 !important;
+        width: 100%;
+        text-align: center;
     }
 
+    /* Hero Fixes */
+    .hero {
+        min-height: 500px;
+        height: auto;
+        padding-top: 6rem;
+    }
 
-    /* Adjust Hero */
     .hero-content h1 {
         font-size: 3rem;
         margin-bottom: 1rem;
+        line-height: 1.1;
     }
     
     .hero-content p {
         font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
 
-    /* Adjust Cards */
-    .class-card, .testimonial-card, .contact-info, .contact-cta {
-        padding: 2rem;
+    .cta-button {
+        padding: 1rem 2rem;
+        width: 100%;
+        text-align: center;
+        display: block;
     }
-    
-    .class-card h3 {
-        font-size: 1.8rem;
+
+    /* Cards Stack */
+    .about-content,
+    .classes-grid,
+    .testimonials-grid,
+    .contact-content,
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .class-card, .testimonial-card, .contact-info, .contact-cta {
+        padding: 2rem 1.5rem;
+    }
+
+    .stat {
+        padding: 1.5rem;
+    }
+
+    /* Hide Desktop Mascot */
+    .mascot-container {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
     
     .class-price {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
-    
-    /* Navbar tweaks */
-    .navbar {
-        width: 95%;
-        padding: 0.8rem 1.5rem;
-    }
-    
-    .logo {
-        font-size: 1.1rem;
-    }
+}
 
-    .nav-menu {
-        display: none; /* Hide menu on mobile for simplicity */
+/* Mobile/Desktop Visibility Toggles */
+.mobile-view {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .desktop-view {
+        display: none !important;
     }
+    
+    .mobile-view {
+        display: block !important;
+    }
+}
+
+/* Mobile Component Styles - Horizontal Snap Scrolling */
+.mobile-scroll-container {
+    display: none; /* Default hidden on desktop */
+}
+
+@media (max-width: 768px) {
+    .mobile-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        -webkit-overflow-scrolling: touch; /* smooth momentum scrolling */
+        
+        /* Hide scrollbar structure */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+}
+
+.mobile-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-card {
+    flex: 0 0 85%; /* Shows part of the next card to encourage scrolling */
+    scroll-snap-align: center;
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.mobile-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.mobile-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Mobile specific tweaks for different card types */
+.mobile-class-card {
+    background: linear-gradient(160deg, #1a1a1a, #151515);
+    border-left: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px; /* Ensure uniform height for swipe feel */
+}
+
+.mobile-testimonial-card {
+    background: linear-gradient(145deg, #1e1e1e, #181818);
+    font-style: italic;
+}
+
+.mobile-contact-card {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.mobile-feature-icon {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    display: block;
 }
 
 

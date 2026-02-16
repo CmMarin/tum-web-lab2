@@ -14,9 +14,19 @@
 </head>
 <body>
     <!-- Navigation -->
+    <input type="checkbox" id="mobile-menu-check">
     <nav class="navbar">
+        <label for="mobile-menu-check" class="menu-overlay"></label>
         <div class="nav-container">
             <div class="logo">Vaidoso Kizomba School</div>
+            
+            <!-- Hamburger Icon -->
+            <label for="mobile-menu-check" class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -42,37 +52,74 @@
         <div class="about-container">
             <h2>About Kizomba</h2>
             
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>What is Kizomba?</h3>
-                    <p>Kizomba is an Angolan partner dance that emerged in the late 1980s. It blends traditional Angolan rhythms with Brazilian and Caribbean influences, creating a slow, sensual, and deeply musical dance form.</p>
+            <!-- Desktop View -->
+            <div class="desktop-view">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>What is Kizomba?</h3>
+                        <p>Kizomba is an Angolan partner dance that emerged in the late 1980s. It blends traditional Angolan rhythms with Brazilian and Caribbean influences, creating a slow, sensual, and deeply musical dance form.</p>
+                    </div>
+                    
+                    <div class="about-text">
+                        <h3>Vaidoso Style</h3>
+                        <p>We teach authentic kizomba with focus on proper technique, connection between partners, and musicality. Whether you're a beginner or experienced dancer, you'll find your place in our community.</p>
+                    </div>
                 </div>
-                
-                <div class="about-text">
-                    <h3>Vaidoso Style</h3>
-                    <p>We teach authentic kizomba with focus on proper technique, connection between partners, and musicality. Whether you're a beginner or experienced dancer, you'll find your place in our community.</p>
+
+                <div class="why-vaidoso">
+                    <h3>Why Choose Vaidoso?</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Authentic Angolan technique</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Small group classes for personalized attention</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Welcoming community for all levels</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Regular social dance events</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="why-vaidoso">
-                
-                <h3>Why Choose Vaidoso?</h3>
-                <div class="features-list">
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Authentic Angolan technique</span>
+            <!-- Mobile View: About & Why Vaidoso Combo Scroller -->
+            <div class="mobile-view">
+                <div class="mobile-scroll-container">
+                    <!-- About Cards -->
+                    <div class="mobile-card">
+                        <h3>🇦🇴 Origins</h3>
+                        <p>Kizomba emerged in Angola in the late 80s. It's a slow, sensual dance blending traditional rhythms with Caribbean vibes.</p>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Small group classes for personalized attention</span>
+                    
+                    <div class="mobile-card">
+                        <h3>✨ Our Style</h3>
+                        <p>Authentic technique + Deep connection. We focus on musicality and proper leading/following for all levels.</p>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Welcoming community for all levels</span>
+    
+                    <!-- Why Choose Us Cards -->
+                    <div class="mobile-card">
+                        <span class="mobile-feature-icon">✓</span>
+                        <h3>Authentic</h3>
+                        <p>Learn the real Angolan technique from day one.</p>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">✓</span>
-                        <span>Regular social dance events</span>
+
+                    <div class="mobile-card">
+                        <span class="mobile-feature-icon">👥</span>
+                        <h3>Community</h3>
+                        <p>Join a welcoming family of passionate dancers.</p>
+                    </div>
+
+                    <div class="mobile-card">
+                        <span class="mobile-feature-icon">🎉</span>
+                        <h3>Events</h3>
+                        <p>Regular socials to practice and have fun!</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +147,8 @@
         <div class="classes-container">
             <h2>Our Classes</h2>
             
-            <div class="classes-grid">
+            <!-- Desktop View -->
+            <div class="classes-grid desktop-view">
                 <div class="class-card">
                     <div class="class-badge">First Class Free</div>
                     <h3>Beginners</h3>
@@ -150,6 +198,39 @@
                     <p class="class-price">€12/night</p>
                 </div>
             </div>
+
+            <!-- Mobile View: Classes Scroller -->
+            <div class="mobile-view">
+                <div class="mobile-scroll-container">
+                    <div class="mobile-card mobile-class-card">
+                        <h3>Beginners 🌱</h3>
+                        <p style="color: var(--primary);">Mon/Wed • 7 PM</p>
+                        <p>Start your journey! Learn basics & connection.</p>
+                        <h3 style="margin-top: 1rem; color: white;">€45/mo</h3>
+                    </div>
+
+                    <div class="mobile-card mobile-class-card">
+                        <h3>Intermediate 🚀</h3>
+                        <p style="color: var(--primary);">Tue/Thu • 8 PM</p>
+                        <p>Level up your moves & musicality.</p>
+                        <h3 style="margin-top: 1rem; color: white;">€55/mo</h3>
+                    </div>
+
+                    <div class="mobile-card mobile-class-card">
+                        <h3>Advanced 🔥</h3>
+                        <p style="color: var(--primary);">Fri • 8:30 PM</p>
+                        <p>Master intricate styling & leading.</p>
+                        <h3 style="margin-top: 1rem; color: white;">€65/mo</h3>
+                    </div>
+
+                    <div class="mobile-card mobile-class-card">
+                        <h3>Socials 🍹</h3>
+                        <p style="color: var(--primary);">Sat • 9 PM</p>
+                        <p>Dance, connect & enjoy the vibes!</p>
+                        <h3 style="margin-top: 1rem; color: white;">€12/night</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -159,7 +240,8 @@
         <div class="testimonials-container">
             <h2>What Our Students Say</h2>
             
-            <div class="testimonials-grid">
+            <!-- Desktop View -->
+            <div class="testimonials-grid desktop-view">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="stars">★★★★★</div>
@@ -208,6 +290,29 @@
                     <p class="testimonial-author">- Vlad T.</p>
                 </div>
             </div>
+
+            <!-- Mobile View: Testimonials Scroller -->
+            <div class="mobile-view">
+                <div class="mobile-scroll-container">
+                    <div class="mobile-card mobile-testimonial-card">
+                        <p>★★★★★</p>
+                        <p class="testimonial-text">"Came knowing nothing, now it's my life! Best community ever."</p>
+                        <p style="color: white; font-weight: bold;">- Ioana M.</p>
+                    </div>
+
+                    <div class="mobile-card mobile-testimonial-card">
+                        <p>★★★★★</p>
+                        <p class="testimonial-text">"Real authentic technique. Found my dance family here!"</p>
+                        <p style="color: white; font-weight: bold;">- Mihai C.</p>
+                    </div>
+
+                    <div class="mobile-card mobile-testimonial-card">
+                        <p>★★★★★</p>
+                        <p class="testimonial-text">"Best decision this year. Changed how I connect with people."</p>
+                        <p style="color: white; font-weight: bold;">- Andreea G.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -217,7 +322,8 @@
         <div class="contact-container">
             <h2>Ready to Dance?</h2>
             
-            <div class="contact-content">
+            <!-- Desktop View -->
+            <div class="contact-content desktop-view">
                 <div class="contact-info">
                     <h3>Get In Touch</h3>
                     <p><strong>Email:</strong> <a href="mailto:info@vaidoso.com">info@vaidoso.com</a></p>
@@ -230,6 +336,30 @@
                     <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="cta-button" target="_blank">Join Us on Instagram</a>
                 </div>
             </div>
+
+            <!-- Mobile View: Contact Stack -->
+            <div class="mobile-view">
+                <div class="mobile-scroll-container">
+                    <div class="mobile-card mobile-contact-card">
+                        <h3>📞 Call Us</h3>
+                        <p><a href="tel:+40741234567" style="color:white; text-decoration: none;">+40 741 234 567</a></p>
+                    </div>
+
+                    <div class="mobile-card mobile-contact-card">
+                        <h3>✉️ Email</h3>
+                        <p><a href="mailto:info@vaidoso.com" style="color:white; text-decoration: none;">info@vaidoso.com</a></p>
+                    </div>
+
+                    <div class="mobile-card mobile-contact-card">
+                        <h3>📸 Instagram</h3>
+                        <p><a href="https://www.instagram.com/vaidoso.kizomba.school/" target="_blank" style="color:var(--primary); text-decoration: none;">@vaidoso.kizomba.school</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-view" style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.instagram.com/vaidoso.kizomba.school/" class="cta-button" target="_blank" style="width: 100%;">Sign Up Now!</a>
+            </div>
         </div>
     </section>
 
@@ -240,11 +370,6 @@
         </div>
         <div class="mascot-speech">Join us!</div>
     </div>
-
-    <!-- Mobile Only Floating FAB (Floating Action Button) -->
-    <a href="#contact" class="mobile-fab">
-        <span>💬</span>
-    </a>
 
     <!-- Footer -->
     <footer class="footer">
