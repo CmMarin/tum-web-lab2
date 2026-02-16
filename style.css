@@ -211,6 +211,22 @@ h1, h2, h3, h4 {
     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
 }
 
+@media (max-width: 900px) {
+    .bg-text {
+        font-size: 14vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 15vw; /* Fluid typography for mobile */
+    }
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+    }
+}
+
 .hero-content h1 span {
     display: block;
     color: var(--primary);
@@ -792,36 +808,162 @@ body::before {
     }
 }
 
-/* Responsive */
+/* Mascot Styles */
+.mascot-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 250px;
+    height: 250px;
+    z-index: 999;
+    cursor: pointer;
+    animation: mascotBounce 2s infinite ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mascot-body {
+    width: 250px;
+    height: 250px;
+    filter: drop-shadow(0 0 10px var(--primary));
+    transform-origin: bottom center;
+}
+
+.mascot-body img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.mascot-speech {
+    position: absolute;
+    top: -30px;
+    right: 100px;
+    background: white;
+    color: var(--bg-dark);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.mascot-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    transform: rotate(45deg);
+}
+
+.mascot-container:hover .mascot-speech {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mascot-container:hover .mascot-body {
+    animation: none;
+    transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes mascotBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Mobile FAB Styles */
+.mobile-fab {
+    display: none; /* Hidden on desktop by default */
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 55px;
+    height: 55px;
+    background: var(--gradient-main);
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(255, 45, 85, 0.4);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    animation: pulse-glow 3s infinite;
+}
+
+/* Responsive Overrides */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
+    /* Show Mobile Elements */
+    .mobile-fab {
+        display: flex;
+    }
+
+    /* Keep the mascot visible but smaller on mobile? No, hide it to reduce clutter as per common practice, or position it top right? Let's hide desktop mascot and show a smaller simplified one or just stick to the FAB. */
+    .mascot-container {
+        display: none; 
+    }
+
+    /* Adjust Global Sizing */
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    /* Adjust Ghost Typography */
+    .bg-text {
+        font-size: 15vw !important; /* Force smaller size */
+        opacity: 0.05 !important;
+    }
+
+
+    /* Adjust Hero */
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    /* Adjust Cards */
+    .class-card, .testimonial-card, .contact-info, .contact-cta {
+        padding: 2rem;
+    }
+    
+    .class-card h3 {
+        font-size: 1.8rem;
+    }
+    
+    .class-price {
+        font-size: 2rem;
+    }
+    
+    /* Navbar tweaks */
+    .navbar {
+        width: 95%;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
     }
 
     .nav-menu {
-        gap: 1.5rem;
-        font-size: 0.9rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-    
-    .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .classes-grid {
-        grid-template-columns: 1fr;
+        display: none; /* Hide menu on mobile for simplicity */
     }
 }
 
