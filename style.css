@@ -3,6 +3,8 @@
     --primary-color: #d4165f;
     --secondary-color: #8b0a3e;
     --accent-color: #ffb81c;
+    --light-bg: #fafafa;
+    --white: #ffffff;
 }
 
 /* Global Styles */
@@ -12,20 +14,25 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
+    background-color: var(--light-bg);
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: var(--secondary-color);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #6a0831 100%);
     padding: 1.2rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .nav-container {
@@ -115,7 +122,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 5rem 2rem;
-    background-color: #fafafa;
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
 }
 
 .about-container {
@@ -145,6 +152,12 @@ body {
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     border-left: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.about-text:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(212, 22, 95, 0.12);
 }
 
 .about-text h3 {
@@ -163,10 +176,11 @@ body {
 /* Why Vaidoso Section */
 .why-vaidoso {
     padding: 2.5rem;
-    background: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%);
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 3rem;
+    border-top: 3px solid var(--primary-color);
 }
 
 .why-vaidoso h3 {
@@ -213,6 +227,12 @@ body {
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     border-top: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(212, 22, 95, 0.12);
 }
 
 .stat-number {
@@ -247,6 +267,233 @@ body {
     }
 
     .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .classes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Classes Section */
+.classes {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.classes-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.classes h2 {
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.class-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.class-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.class-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(212, 22, 95, 0.15);
+}
+
+.class-card:hover::before {
+    opacity: 1;
+}
+
+.class-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--accent-color);
+    color: #1a1a1a;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.class-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.difficulty {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.star {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.class-time {
+    font-size: 0.9rem;
+    color: #999;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.class-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlights span {
+    background: linear-gradient(135deg, #f0f0f0 0%, #fafafa 100%);
+    color: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(212, 22, 95, 0.1);
+    transition: all 0.2s ease;
+}
+
+.highlights span:hover {
+    background: linear-gradient(135deg, var(--primary-color), #c0134a);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.class-price {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.click-info {
+    font-size: 0.8rem;
+    color: #999;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.class-card {
+    cursor: pointer;
+}
+
+/* Testimonials Section */
+.testimonials {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.testimonials-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.testimonials h2 {
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(212, 22, 95, 0.12);
+}
+
+.testimonial-header {
+    margin-bottom: 1.2rem;
+}
+
+.stars {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials h2 {
         font-size: 1.8rem;
     }
 }
