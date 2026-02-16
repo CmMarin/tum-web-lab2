@@ -79,6 +79,8 @@
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .cta-button:hover {
